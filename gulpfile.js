@@ -15,12 +15,22 @@ gulp.task('vendor', function() {
 
   // jQuery
   gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
-    .pipe(gulp.dest('./vendor/jquery'))
+    './node_modules/jquery/dist/*',
+    '!./node_modules/jquery/dist/core.js'
+  ])
+  .pipe(gulp.dest('./vendor/jquery'))
 
-})
+  // xlsx
+  gulp.src([
+      './node_modules/xlsx/dist/*',
+      '!./node_modules/xlsx/dist/jszip.js',
+      '!./node_modules/xlsx/dist/cpexcel.js',
+      '!./node_modules/xlsx/dist/LICENSE',
+      '!./node_modules/xlsx/dist/shim.min.js'
+    ])
+    .pipe(gulp.dest('./vendor/xlsx'))
+
+  })
 
 // Default task
 gulp.task('default', ['vendor']);
